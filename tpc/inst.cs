@@ -139,9 +139,9 @@ namespace tpc
             // Construct a machine language instruction.
             public static int make(int opcode, int operand1, int operand2)
             {
-                // Allow caller to leave out these operands.
-                //TODO: MVM   operand1 = operand1 || 0;  //TODO: MVM
-                //TODO: MVM operand2 = operand2 || 0;  //TODO: MVM
+                  // Allow caller to leave out these operands.
+                operand1 = operand1 ?? 0;
+                operand2 = operand2 ?? 0;
 
                 // Sanity check.
                 if (operand1 < 0)
