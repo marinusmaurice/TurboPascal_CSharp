@@ -22,7 +22,7 @@ namespace tpc
             this.lineNumber = 1;
         }
 
-        // Returns the next character, or -1 on end of file.
+        // Returns the next character, or char.MaxValue on end of file.
         public char next()
         {
             var ch = this.peek();
@@ -30,19 +30,19 @@ namespace tpc
             {
                 this.lineNumber++;
             }
-            if (ch != -1)
+            if (ch != char.MaxValue)
             {
                 this.position++;
             }
             return ch;
         }
 
-        // Peeks at the next character, or -1 on end of file.
+        // Peeks at the next character, or char.MaxValue on end of file.
         public char peek()
         {
             if (this.position >= this.input.Length)
             {
-                return char.MaxValue;  //TODO: MVM
+                return char.MaxValue;  
             }
             return this.input[this.position];
         }
